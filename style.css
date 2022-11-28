@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+body {
+  /* Импортирует шрифт и устанавливает его */
+  font-family: 'Roboto Mono', monospace;
+}
+
+.main {
+  /* Создаёт отступ */
+  padding: 1rem;
+}
+  .main h1 {
+    /* Задаёт размер шрифта  */
+    font-size: 1.5rem;
+    /* Задаёт пространство между строками */
+    line-height: 1.25;
+  }
+  .main h2 {
+    /* Задаёт цвет шрифта */
+    color: gray;
+    /* Задаёт размер шрифта */
+    font-size: 1rem;
+  }
+  .main p.output-row {
+    /* Создаёт отступ */
+    margin-bottom: 4px;
+  }
+    .main p.output-row span.element {
+      /* Задаёт отображаемый тип курсора */
+      cursor: pointer;
+      /* Фиксируемый минимальный размер */
+      min-width: 3rem;
+      /* Задаёт цвет шрифта */
+      color: #929699;
+      /* Выравнивание текста по центру */
+      text-align: center;
+      /* Создаёт отступ */
+      margin: 0 .25rem;
+      /* Создаёт отступ */
+      padding: .25rem;
+      /* блочный элемент, который обтекается другими элементами веб-страницы подобно встроенному элементу */
+      display: inline-block;
+      /* Границы вокруг элемента */
+      border: 1px solid #c4c9cf;
+      /* Задаёт цвет фона */
+      background: #e0e3e6;
+      /* Переходное состояние от одного к другому */
+      transition: all .3s ease-in-out;
+    }
+      .main p.output-row span.element:hover {
+        /* Задаёт цвет шрифта */
+        color: white;
+        /* Задаёт цвет фона */
+        background-color: #333;
+      }
+      .main p.output-row span.element.moved {
+        /* Задаёт цвет шрифта */
+        color: white;
+      }
+        .main p.output-row span.element.moved.left-active {
+          /* Задаёт цвет фона */
+          background: darkgreen;
+        }
+        .main p.output-row span.element.moved.right-active {
+          /* Задаёт цвет фона */
+          background: green;
+        }
+      .main p.output-row span.element.not-moved:hover {
+        /* Задаёт цвет шрифта */
+        color: white !important;
+        /* Задаёт цвет фона */
+        background-color: #787878;
+      }
+      .main p.output-row span.element.not-moved::before {
+        content: '';
+        /* Абсолютное позиционирование */
+        position: absolute;
+        /* Положение по оси Z */
+        z-index: 1;
+        /* Задаёт высоту */
+        height: 100%;
+        /* Задаёт ширину */
+        width: 35px;
+        /* Делает анимацию мерцание элемента */
+        animation: blinking 1s ease infinite;
+      }
+      .main p.output-row span.element.not-moved.left-active {
+        /* Абсолютное позиционирование */
+        position: relative;
+        /* Жирный шрифт */
+        font-weight: bold;
+        /* Задаёт цвет шрифта */
+        color: #333;
+      }
+        .main p.output-row span.element.not-moved.left-active::before {
+          /* Задаёт толщину, цвет и стиль границы элемента */
+          border-left: 1px solid black;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+          /* Задаёт расстояние от левого края */
+          left: 0;
+          /* Задаёт расстояние от верхнего края */
+          top: 0;
+        }
+      .main p.output-row span.element.not-moved.right-active {
+        /* Относительное позиционирование */
+        position: relative;
+        /* Жирный шрифт */
+        font-weight: bold;
+        /* Задаёт цвет шрифта */
+        color: #333;
+      }
+        .main p.output-row span.element.not-moved.right-active::before {
+          /* Задаёт толщину, цвет и стиль границы элемента */
+          border-right: 1px solid black;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+          /* Задаёт расстояние от левого края */
+          right: 0;
+          /* Задаёт расстояние от верхнего края */
+          top: 0;
+        }
+
+.btn {
+  /* Делает закруглённые углы */
+  border-radius: 5px;
+  /* Задаёт цвет шрифта */
+  background-color: lightskyblue;
+}
+
+/* Продолжение реализации анимации */
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
